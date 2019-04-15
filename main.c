@@ -1,26 +1,32 @@
 /*	Alteracia --- acalandr	*/
 /*	Get next line main		*/
 
+#include <errno.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "ft.h"
 #include "get_next_line.h"
 #include "libft.h"
 
-int		read_file(int i, char **arg)
+int		read_file(int c, char **arg)
 {
-	int		op;	
+	int		op = 0;	
 	char	*line;
 	int		err;
 	
-	if (i > 2)
+	line = NULL;
+	if (c > 0)
 	{
-/*		open file	*/
 		errno = 0;
-		op = open(arg[i], O_RDONLY);
+		op = open(arg[c], O_RDONLY);
 		err = errno;
 		if (err != 0)
-			return (err_message(err, arg[0], arg[i]));		
+			return (err_message(err, arg[0], arg[c]));		
 	}
-	while (get_next_line(op, line))
+	get_next_line(op, &line);
+	ft_putstr(line);
+	while (get_next_line(op, &line))
 	{
 		ft_putstr(line);
 		ft_putstr("\nnext: ");
@@ -28,7 +34,7 @@ int		read_file(int i, char **arg)
 	close(op);
 	err = errno;
 	if (err != 0)
-		return (err_message(err, arg[0], arg[i]));
+		return (err_message(err, arg[0], arg[c]));
 	return (0);
 }
 
@@ -38,15 +44,10 @@ int main(int c, char **argv)
 
 	if (c > 1)
 	{
-		if (!atoi(argv[2]))
-			return (0);
-		BUF_SIZE = atoi(argv[2]); /* could i use that? */
-		i = 2;
-		if (c == 2)
-/*			read from input				*/
+		i = 1;
+		if (c == 1)
 			read_file(0, argv);
 		else
-/*		multiple files reading			*/
 			while (i < c)
 				read_file(i++, argv);
 	}

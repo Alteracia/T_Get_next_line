@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acalandr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acalandr <acalandr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 17:34:36 by acalandr          #+#    #+#             */
-/*   Updated: 2019/02/14 20:14:30 by acalandr         ###   ########.fr       */
+/*   Updated: 2019/04/15 17:28:54 by acalandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
+#include "libft.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
