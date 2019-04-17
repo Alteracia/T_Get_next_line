@@ -6,6 +6,8 @@ gcc -Wall -Wextra -Werror -I ~/$1/ -I ~/$1/libft -o ft_errors.o -c ft_errors.c
 gcc -O0 -g -o test_gnl main.o ft_errors.o ~/$1/get_next_line.o -I ~/$1/libft -L ~/$1/libft/ -lft
 ./test_gnl onestring
 ./test_gnl twostrings
+./test_gnl emptyline
 ./test_gnl errors
+./test_gnl onestring twostrings
 rm test_gnl
 make --directory ~/$1/libft fclean

@@ -32,17 +32,23 @@ int		read_file(int c, char **arg)
 		op = open(arg[c], O_RDONLY);
 		err = errno;
 		if (err != 0)
-			return (err_message(err, arg[0], arg[c]));		
-	}
+			return (err_message(err, arg[0], arg[c]));
+		ft_putstr("\ncontent of file \"");
+		ft_putstr(arg[c]);
+		ft_putstr("\"\n");
+	}	
 	while (get_next_line(op, &line))
 	{
 		ft_putstr(line);
-		ft_putstr("\nnext: ");
+		ft_putstr("\n");
 	}
-	close(op);
-	err = errno;
-	if (err != 0)
-		return (err_message(err, arg[0], arg[c]));
+	if(c > 0)
+	{
+		close(op);
+		err = errno;
+		if (err != 0)
+			return (err_message(err, arg[0], arg[c]));
+	}
 	return (0);
 }
 
@@ -50,15 +56,20 @@ int		read_file(int c, char **arg)
 int main(int c, char **argv)
 {
 	int i;
+	/*int		op = -1;	
+	char	*line;*/
 
 	if (c > 1)
 	{
 		i = 1;
 		if (c == 1)
-			read_file(0, argv);
+			while (c)
+				read_file(0, argv);
 		else
 			while (i < c)
 				read_file(i++, argv);
 	}
+	/*line = NULL;*/
+	/*get_next_line(op, &line);*/
 	return (0);
 }
