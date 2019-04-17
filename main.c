@@ -34,13 +34,11 @@ int		read_file(int c, char **arg)
 		if (err != 0)
 			return (err_message(err, arg[0], arg[c]));		
 	}
-	get_next_line(op, &line);
-	ft_putstr(line);
-	/*while (get_next_line(op, &line))
+	while (get_next_line(op, &line))
 	{
 		ft_putstr(line);
 		ft_putstr("\nnext: ");
-	}*/
+	}
 	close(op);
 	err = errno;
 	if (err != 0)
@@ -52,19 +50,7 @@ int		read_file(int c, char **arg)
 int main(int c, char **argv)
 {
 	int i;
-	/*t_list *list;
-	t_list *fdlist;
-	char *str = NULL;*/
 
-	/* check  list */
-
-	/*list = split_for_lines("**two*words*dbdh*ss", '*');
-	fdlist = ft_lstnew(NULL, 0);
-	fdlist->content = list;
-	fdlist->content_size = 5;
-	seach_fd_line(&fdlist, &str, 5);*/
-
-	/*ft_print_list(list);*/
 	if (c > 1)
 	{
 		i = 1;
