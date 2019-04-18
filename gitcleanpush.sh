@@ -1,4 +1,5 @@
 git add .
+git rm -r --cached *.dSYM
 git rm -r --cached .idea
 git rm -r --cached .vscode
 git rm -r --cached .DS_Store

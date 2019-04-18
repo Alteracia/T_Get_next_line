@@ -40,6 +40,7 @@ int		read_file(int c, char **arg)
 	while (get_next_line(op, &line))
 	{
 		ft_putstr(line);
+		ft_strdel(&line);
 		ft_putstr("\n");
 	}
 	if(c > 0)
@@ -75,6 +76,7 @@ int		read_multiple(int c, char **arg)
 	while (get_next_line(op[i], &line))
 	{
 		ft_putstr(line);
+		ft_strdel(&line);
 		ft_putstr(" ");
 		i++;
 		if (i > 2)
@@ -113,7 +115,8 @@ int		read_mult_empty(int c, char **arg)
 	}
 	i = 0;	
 	while (get_next_line(op[i], &line))
-	{		
+	{
+		ft_strdel(&line);
 		i++;
 		if (i > 2)
 			i = 0;
