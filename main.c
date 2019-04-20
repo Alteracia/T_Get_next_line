@@ -137,7 +137,54 @@ int		read_mult_empty(int c, char **arg)
 int main(int c, char **argv)
 {
 	int i;
+
+	/*char *temp;
+	char *temp2;
+	t_list *list;
 	
+	temp = ft_strnew(5);
+
+	temp = ft_strcpy(temp, "five ");*/
+
+	/*list = split_for_lines(temp, 42);*/
+
+	/*list = ft_lstnew(NULL, 0);
+	list->content = split_for_lines(temp, 42);
+	list->content_size = 4;
+	ft_strdel(&temp);
+	if (!seach_fd_line(&list, &temp, list->content_size))
+	{
+		temp2 = ft_strnew(5);
+		temp2 = ft_strcpy(temp2, "and 5");
+		if (temp)
+			temp = ft_strncat(temp, temp2, 6);*/
+		/*ft_putstr(temp);*/
+		/*list = ft_lstnew(NULL, 0);
+		list->content = split_for_lines(temp, 42);
+		list->content_size = 4;
+		ft_strdel(&temp);
+		ft_strdel(&temp2);
+	}
+	if (!seach_fd_line(&list, &temp, list->content_size))
+	{
+		ft_putstr(temp);
+	}*/
+	/*ft_strdel(&temp);
+	if (seach_fd_line(&list, &temp, list->content_size))
+		ft_putstr(temp);
+	ft_strdel(&temp);
+	if (!seach_fd_line(&list, &temp, list->content_size))
+		ft_putstr(temp);*/
+
+	/*ft_print_list(list->content);*/
+	
+	/*ft_strdel(&temp);
+	temp = (char*)list->content;
+	temp = ft_strnew(13);
+	temp = ft_strcpy(temp, (char*)list->content);
+	temp = ft_strcat(temp, "four");
+	ft_putstr(temp);*/
+
 	if (c > 0)
 	{
 		i = 1;
@@ -151,6 +198,6 @@ int main(int c, char **argv)
 		else
 			while (i < c)
 				read_file(i++, argv);
-	}	
+	}
 	return (0);
 }

@@ -6,12 +6,11 @@ gcc -O0 -g -o test *.o ~/$1/get_next_line.o -I ~/$1/libft -L ~/$1/libft/ -lft
 ./test onestring
 ./test twostrings
 ./test emptyline
-#./test_gnl errors
+./test errors
 ./test onestring twostrings
 ./test -m first second third
-rm *.o
-rm test
+rm ~/$1/*.o *.o test
 make --directory ~/$1/libft fclean
-gcc -Wall -Wextra -Werror -g -o test -I ~/$1/libft -I ~/$1 ~/$1/libft/*.c ~/$1/*.c *.c
-~/Applications/valgrind/bin/valgrind --leak-check=full ./test -mh errors errors_1 errors_2
-rm test
+#gcc -Wall -Wextra -Werror -g -o test -I ~/$1/libft -I ~/$1 ~/$1/libft/*.c ~/$1/*.c *.c
+#~/Applications/valgrind/bin/valgrind --leak-check=full ./test -mh errors errors_1 errors_2
+#rm test
