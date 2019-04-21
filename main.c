@@ -139,12 +139,14 @@ int main(int c, char **argv)
 	int i;
 
 	/*char *temp;
-	char *temp2;
-	t_list *list;
-	
-	temp = ft_strnew(5);
+	char *temp2;*/
+	/*t_list *list;*/
+		
+	/*temp = ft_strnew(5);*/
+	/*temp = ft_strcpy(temp, "five ");*/
 
-	temp = ft_strcpy(temp, "five ");*/
+	/*temp2 = strcat(NULL, temp);
+	ft_putstr(temp2);*/
 
 	/*list = split_for_lines(temp, 42);*/
 

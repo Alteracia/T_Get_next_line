@@ -7,7 +7,7 @@ gcc -O0 -g -o test *.o ~/$1/get_next_line.o -I ~/$1/libft -L ~/$1/libft/ -lft
 ./test twostrings
 ./test emptyline
 ./test errors
-./test onestring twostrings
+./test onestring twostrings emptyline
 ./test -m first second third
 rm ~/$1/*.o *.o test
 make --directory ~/$1/libft fclean
