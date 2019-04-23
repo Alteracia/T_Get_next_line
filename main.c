@@ -40,7 +40,7 @@ int		read_file(int c, char **arg)
 	while (get_next_line(op, &line))
 	{
 		ft_putstr(line);
-		ft_strdel(&line);
+		/*ft_strdel(&line);**/
 		ft_putstr("\n");
 	}
 	if(c > 0)
