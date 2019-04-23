@@ -8,7 +8,7 @@ gcc -O0 -g -o test *.o ~/$1/get_next_line.o -I ~/$1/libft -L ~/$1/libft/ -lft
 #./test emptyline
 #./test errors
 #./test onestring twostrings emptyline
-./test -m first second third
+#./test -m first second third
 #./test Voyna-i-mir.txt
 
 #date +%s
